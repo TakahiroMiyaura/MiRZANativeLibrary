@@ -1,0 +1,59 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+android {
+    namespace 'com.reseul.mirzanativelibrary'
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    android.libraryVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            if (variant.name == android.buildTypes.release.name) {
+
+                outputFileName = output.outputFileName.replace(("release"), "${version}")
+                def task = project.tasks.create("publish${variant.name.capitalize()}Apk", Copy)
+                        {
+                            from(new File(output.outputFile.parent,outputFileName))
+                            into(deployTo)
+                        }
+                task.dependsOn variant.assembleProvider.get()
+                variant.assembleProvider.get().finalizedBy(task)
+
+            } else if (variant.name == android.buildTypes.debug.name) {
+                outputFileName = output.outputFileName.replace((".aar"), "-${version}.aar")
+            }
+
+
+        }
+
+    }
+
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    compileOnly fileTree(dir: '..\\libs', include: ['*.aar', '*.jar'], exclude: [])
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Com.Reseul.MiRZAUnityLibrary",
+    "rootNamespace": "Com.Reseul.MiRZAUnityLibrary",
+    "references": [
+        "GUID:79868382c2b85f84db22a4a888cf0834",
+        "GUID:d0c190a3ca1194e1898141f1b7f35734"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
