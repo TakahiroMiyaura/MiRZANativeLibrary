@@ -3,18 +3,14 @@
     "version": "1.0.0",
     "displayName": "MiRZA Unity Library",
     "description": "This is an example package",
-    "unity": "6.0.0",
-    "unityRelease": "0b5",
+    "unity": "2022.3",
+    "unityRelease": "16f1",
+    "type": "library",
     "dependencies": {
         "com.nttqonoq.devices.android.mirzalibrary": "1.1.5",
         "com.qualcomm.snapdragon.spaces": "1.0.2"
    },
-   "keywords": [
-      "MiRZA"
-    ],
     "author": {
-      "name": "Takahiro Miyaura",
-      "email": "",
-      "url": ""
+      "name": "Takahiro Miyaura"
     }
   }
