@@ -5,12 +5,25 @@
     "description": "This is an example package",
     "unity": "2022.3",
     "unityRelease": "16f1",
+    "license": "BSL-1.0",
     "type": "library",
     "dependencies": {
         "com.nttqonoq.devices.android.mirzalibrary": "1.1.5",
         "com.qualcomm.snapdragon.spaces": "1.0.2"
    },
-    "author": {
-      "name": "Takahiro Miyaura"
-    }
+   "author": {
+     "name": "Reseul"
+   },
+   "samples": [
+       {
+           "displayName": "Recorder Sample On Batch",
+           "description": "This is a sample that starts recording MiRZA's microphone and plays back the recorded data when recording is complete.",
+           "path": "Samples~/RecorderSampleOnBatch"
+       },
+       {
+           "displayName": "Recorder Sample On Realtime",
+           "description": "This is a sample that plays back the recorded data in real time from the start to the end of MiRZA's microphone recording.",
+           "path": "Samples~/RecorderSampleOnRealtime"
+       }
+   ]
   }
