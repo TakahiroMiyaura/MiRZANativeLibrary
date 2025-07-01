@@ -1,0 +1,54 @@
+name: Update-UPM-Branch
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  MAIN_BRANCH: main
+  UPM_BRANCH: upm
+  PKG_ROOT_DIR: Assets/MiRZAUnityLibrary
+  SAMPLES_DIR: Samples
+  DOC_FILES: CHANGELOG.md LICENSE.md
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # 最新を取得
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: git checkout main
+
+      # イベントを起動したタグを steps.tag.outputs.name に格納
+      - name: Tag name
+        id: tag
+        run: echo ::set-output name=name::${GITHUB_REF#refs/tags/v}
+
+      # Git の設定
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # UPM 用のブランチを作成
+      - name: Create UPM branches
+        run: |
+          git branch -D $UPM_BRANCH &> /dev/null || echo $UPM_BRANCH branch is not found
+          git subtree split -P "$PKG_ROOT_DIR" -b $UPM_BRANCH
+          git checkout $UPM_BRANCH
+          for file in $DOC_FILES; do
+            git checkout $MAIN_BRANCH $file &> /dev/null || echo $file is not found
+          done
+          git mv $SAMPLES_DIR Samples~ &> /dev/null || echo $SAMPLES_DIR is not found
+          rm Samples.meta
+          sed -i -e "s/\"version\":.*$/\"version\": \"$TAG\",/" package.json || echo package.json is not found
+          git commit -am "release $TAG."
+          git push -f origin $UPM_BRANCH
+          git checkout -b $UPM_BRANCH@$TAG
+          git push -f origin $UPM_BRANCH@$TAG
+        env:
+          TAG: ${{ steps.tag.outputs.name }}
