@@ -8,7 +8,7 @@ on:
 env:
   MAIN_BRANCH: main
   UPM_BRANCH: upm
-  PKG_ROOT_DIR: Assets/MiRZAUnityLibrary
+  PKG_ROOT_DIR: Unity-Library/Assets/MiRZAUnityLibrary
   SAMPLES_DIR: Samples
   DOC_FILES: CHANGELOG.md LICENSE.md
 
