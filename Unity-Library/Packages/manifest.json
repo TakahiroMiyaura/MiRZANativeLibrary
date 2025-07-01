@@ -2,7 +2,6 @@
   "dependencies": {
     "com.nttqonoq.devices.android.mirzalibrary": "file:MiRZA/mirza_library-1.1.5.tgz",
     "com.qualcomm.snapdragon.spaces": "file:SnapdragonSpaces/com.qualcomm.snapdragon.spaces-1.0.2.tgz",
-    "com.udonba.logprompter": "https://github.com/udonba/Unity-LogPrompter.git?path=Assets/LogPrompter",
     "com.unity.ai.navigation": "2.0.4",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.ide.rider": "3.0.31",

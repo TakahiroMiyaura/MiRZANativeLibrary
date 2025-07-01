@@ -16,15 +16,6 @@
         "com.unity.xr.interaction.toolkit": "2.5.4"
       }
     },
-    "com.udonba.logprompter": {
-      "version": "https://github.com/udonba/Unity-LogPrompter.git?path=Assets/LogPrompter",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.textmeshpro": "3.0.6"
-      },
-      "hash": "19c52d938efac6809a8453f1361623005f8ff047"
-    },
     "com.unity.ai.navigation": {
       "version": "2.0.4",
       "depth": 0,
@@ -205,14 +196,6 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
-    },
-    "com.unity.textmeshpro": {
-      "version": "3.0.6",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.ugui": "2.0.0"
-      }
     },
     "com.unity.timeline": {
       "version": "1.8.7",
