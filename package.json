@@ -1,6 +1,6 @@
 {
     "name": "com.reseul.mirzaunitylibrary",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "displayName": "MiRZA Unity Library",
     "description": "This is an example package",
     "unity": "2022.3",
