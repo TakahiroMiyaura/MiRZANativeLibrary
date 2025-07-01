@@ -1066,6 +1066,26 @@ MonoBehaviour:
   company: Qualcomm
   priority: 0
   required: 0
+--- !u!114 &995485461538143774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8bc94f98f04c029effd818d229d109, type: 3}
+  m_Name: HandTrackingMeshFBFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Hand Tracking Mesh FB
+  version: 4.1.13
+  featureIdInternal: com.qualcomm.snapdragon.spaces.handtracking.mesh.fb
+  openxrExtensionStrings: XR_FB_hand_tracking_mesh
+  company: Qualcomm
+  priority: 0
+  required: 0
 --- !u!114 &1027767424252662276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,6 +1130,47 @@ MonoBehaviour:
   required: 0
   cacheSize: 1048576
   perThreadCacheSize: 51200
+--- !u!114 &1850652809022559532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35cd3fa9005147079ad77c3e1152d8e3, type: 3}
+  m_Name: HandTrackingMeshMSFTFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Hand Tracking Mesh MSFT
+  version: 4.1.13
+  featureIdInternal: com.qualcomm.snapdragon.spaces.handtracking.mesh.msft
+  openxrExtensionStrings: XR_MSFT_hand_tracking_mesh
+  company: Qualcomm
+  priority: 0
+  required: 0
+--- !u!114 &2364170904198094386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa78685d2359408d9e46e52dd1291ba, type: 3}
+  m_Name: HandTrackingFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 1
+  nameUi: Hand Tracking
+  version: 4.1.13
+  featureIdInternal: com.qualcomm.snapdragon.spaces.handtracking
+  openxrExtensionStrings: XR_EXT_hand_tracking
+  company: Qualcomm
+  priority: 0
+  required: 0
+  AutoStart: 1
 --- !u!114 &2468619164331944765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
